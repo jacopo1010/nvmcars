@@ -84,9 +84,9 @@ public class Attivita {
     /**
      * Elemento generato automaticamente: disponibilita
      */
-    @OneToMany(mappedBy = "disponibilita", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE })
+    @OneToMany(mappedBy = "attivita", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE })
     @Fetch(FetchMode.SELECT)
-    private List<Disponiblita> disponibilita = new ArrayList<>();
+    private List<Disponibilita> disponibilita = new ArrayList<>();
 
     // --- COSTRUTTORE ---
     public Attivita() {
@@ -234,7 +234,7 @@ public class Attivita {
      *
      * @return elemento generato automaticamente: disponibilita
      */
-    public List<Disponiblita> getDisponibilita() {
+    public List<Disponibilita> getDisponibilita() {
         return this.disponibilita;
     }
 
@@ -243,7 +243,7 @@ public class Attivita {
      *
      * @param disponibilita elemento generato automaticamente: disponibilita
      */
-    public void setDisponibilita(List<Disponiblita> disponibilita) {
+    public void setDisponibilita(List<Disponibilita> disponibilita) {
         this.disponibilita = disponibilita;
     }
 }
