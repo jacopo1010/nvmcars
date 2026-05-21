@@ -37,9 +37,9 @@ public class RigaPrenotazioneRepository extends SimpleRepositoryImpl<RigaPrenota
         return query.getResultList();
     }
 
-    public List<RigaPrenotazione> findByRigaPrenotazioneId(Long id) {
+    public List<RigaPrenotazione> findByPrenotazioneId(Long id) {
         TypedQuery<RigaPrenotazione> query = this.getEntityManager().createQuery(
-                "SELECT r FROM RigaPrenotazione r WHERE r.rigaPrenotazione.id = :id",
+                "SELECT r FROM RigaPrenotazione r WHERE r.prenotazione.id = :id",
                 RigaPrenotazione.class);
         query.setParameter("id", id);
         return query.getResultList();

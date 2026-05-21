@@ -44,8 +44,8 @@ public class AttivitaServiceBase {
         return this.repository.findByKeyword(keyword);
     }
 
-    public List<Attivita> findByAttivitaId(Long id) {
-        return this.repository.findByAttivitaId(id);
+    public List<Attivita> findByTitolareId(Long id) {
+        return this.repository.findByTitolareId(id);
     }
 
     public List<Attivita> findByDisponibilitaId(Long id) {
@@ -108,17 +108,17 @@ public class AttivitaServiceBase {
             throw new IllegalArgumentException("Attivita obbligatorio");
         }
 
-        Titolare attivita = entity.getAttivita();
-        if (attivita == null || attivita.getId() == null) {
+        Titolare titolare = entity.getTitolare();
+        if (titolare == null || titolare.getId() == null) {
             throw new IllegalArgumentException("Titolare associato obbligatorio per Attivita");
         }
-        if (attivita != null) {
-            if (attivita.getId() == null) {
+        if (titolare != null) {
+            if (titolare.getId() == null) {
                 throw new IllegalArgumentException("Id di Titolare associato obbligatorio");
             }
-            if (!this.titolareRepository.existingById(attivita.getId())) {
+            if (!this.titolareRepository.existingById(titolare.getId())) {
                 throw new IllegalArgumentException("Titolare associato non esistente: "
-                    + attivita.getId());
+                    + titolare.getId());
             }
         }
     }

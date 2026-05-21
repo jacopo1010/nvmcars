@@ -15,7 +15,6 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Response;
 import org.nvm.cars.model.Disponiblita;
-import org.nvm.cars.model.Attivita;
 import org.nvm.cars.model.Servizio;
 import org.nvm.cars.model.RigaPrenotazione;
 import org.nvm.cars.dto.DisponiblitaDto;
@@ -135,9 +134,6 @@ public abstract class DisponiblitaControllerBase {
         dto.setDataOraInizio(entity.getDataOraInizio());
         dto.setDataOraFine(entity.getDataOraFine());
         dto.setPostiDisponibili(entity.getPostiDisponibili());
-        if (entity.getAttivita() != null) {
-            dto.setAttivitaId(entity.getAttivita().getId());
-        }
         if (entity.getDisponibilita() != null) {
             dto.setDisponibilitaId(entity.getDisponibilita().getId());
         }
@@ -173,11 +169,6 @@ public abstract class DisponiblitaControllerBase {
         entity.setDataOraInizio(dto.getDataOraInizio());
         entity.setDataOraFine(dto.getDataOraFine());
         entity.setPostiDisponibili(dto.getPostiDisponibili());
-        if (dto.getAttivitaId() != null) {
-            Attivita relationEntity = new Attivita();
-            relationEntity.setId(dto.getAttivitaId());
-            entity.setAttivita(relationEntity);
-        }
         if (dto.getDisponibilitaId() != null) {
             Servizio relationEntity = new Servizio();
             relationEntity.setId(dto.getDisponibilitaId());

@@ -76,7 +76,7 @@ public class Titolare {
     /**
      * Elemento generato automaticamente: attivita
      */
-    @OneToMany(mappedBy = "attivita", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE })
+    @OneToMany(mappedBy = "titolare", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE })
     @Fetch(FetchMode.SELECT)
     private List<Attivita> attivita = new ArrayList<>();
     /**

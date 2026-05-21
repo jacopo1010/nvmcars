@@ -54,13 +54,6 @@ public class Disponiblita {
     @Column(name = "posti_disponibili", nullable = false)
     private Integer postiDisponibili;
     /**
-     * Elemento generato automaticamente: attivita
-     */
-    @OneToOne(fetch = FetchType.LAZY)
-    @Fetch(FetchMode.SELECT)
-    @JoinColumn(name = "attivita_id")
-    private Attivita attivita;
-    /**
      * Elemento generato automaticamente: disponibilita
      */
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = { CascadeType.REMOVE })
@@ -147,23 +140,6 @@ public class Disponiblita {
      */
     public void setPostiDisponibili(Integer postiDisponibili) {
         this.postiDisponibili = postiDisponibili;
-    }
-    /**
-     * Restituisce attivita.
-     *
-     * @return elemento generato automaticamente: attivita
-     */
-    public Attivita getAttivita() {
-        return this.attivita;
-    }
-
-    /**
-     * Imposta attivita.
-     *
-     * @param attivita elemento generato automaticamente: attivita
-     */
-    public void setAttivita(Attivita attivita) {
-        this.attivita = attivita;
     }
     /**
      * Restituisce disponibilita.

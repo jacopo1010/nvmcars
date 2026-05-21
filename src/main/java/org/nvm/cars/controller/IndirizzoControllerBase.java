@@ -128,8 +128,8 @@ public abstract class IndirizzoControllerBase {
         dto.setProvincia(entity.getProvincia());
         dto.setLatitudine(entity.getLatitudine());
         dto.setLongitudine(entity.getLongitudine());
-        if (entity.getIndirizzo() != null) {
-            dto.setIndirizzoId(entity.getIndirizzo().getId());
+        if (entity.getAttivita() != null) {
+            dto.setAttivitaId(entity.getAttivita().getId());
         }
         return dto;
     }
@@ -158,10 +158,10 @@ public abstract class IndirizzoControllerBase {
         entity.setProvincia(dto.getProvincia());
         entity.setLatitudine(dto.getLatitudine());
         entity.setLongitudine(dto.getLongitudine());
-        if (dto.getIndirizzoId() != null) {
+        if (dto.getAttivitaId() != null) {
             Attivita relationEntity = new Attivita();
-            relationEntity.setId(dto.getIndirizzoId());
-            entity.setIndirizzo(relationEntity);
+            relationEntity.setId(dto.getAttivitaId());
+            entity.setAttivita(relationEntity);
         }
         return entity;
     }

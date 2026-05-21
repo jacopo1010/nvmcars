@@ -72,13 +72,13 @@ public class Indirizzo {
     @Column(name = "longitudine")
     private BigDecimal longitudine;
     /**
-     * Elemento generato automaticamente: indirizzo
+     * Elemento generato automaticamente: attivita
      */
     @OneToOne(fetch = FetchType.LAZY, optional = false, cascade = { CascadeType.REMOVE })
     @Fetch(FetchMode.SELECT)
     @JoinColumn(name = "attivita_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Attivita indirizzo;
+    private Attivita attivita;
 
     // --- COSTRUTTORE ---
     public Indirizzo() {
@@ -222,20 +222,20 @@ public class Indirizzo {
         this.longitudine = longitudine;
     }
     /**
-     * Restituisce indirizzo.
+     * Restituisce attivita.
      *
-     * @return elemento generato automaticamente: indirizzo
+     * @return elemento generato automaticamente: attivita
      */
-    public Attivita getIndirizzo() {
-        return this.indirizzo;
+    public Attivita getAttivita() {
+        return this.attivita;
     }
 
     /**
-     * Imposta indirizzo.
+     * Imposta attivita.
      *
-     * @param indirizzo elemento generato automaticamente: indirizzo
+     * @param attivita elemento generato automaticamente: attivita
      */
-    public void setIndirizzo(Attivita indirizzo) {
-        this.indirizzo = indirizzo;
+    public void setAttivita(Attivita attivita) {
+        this.attivita = attivita;
     }
 }

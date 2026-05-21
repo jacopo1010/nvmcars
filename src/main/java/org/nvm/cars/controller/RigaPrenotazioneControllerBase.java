@@ -128,12 +128,12 @@ public abstract class RigaPrenotazioneControllerBase {
     }
 
     @GET
-    @Path("/by-riga_prenotazione/{rigaPrenotazioneId}")
-    public Response findByRigaPrenotazioneId(@PathParam("rigaPrenotazioneId") Long rigaPrenotazioneId) {
-        if (rigaPrenotazioneId == null) {
+    @Path("/by-prenotazione/{prenotazioneId}")
+    public Response findByPrenotazioneId(@PathParam("prenotazioneId") Long prenotazioneId) {
+        if (prenotazioneId == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.ok(this.toDtoList(this.rigaPrenotazioneService.findByRigaPrenotazioneId(rigaPrenotazioneId))).build();
+        return Response.ok(this.toDtoList(this.rigaPrenotazioneService.findByPrenotazioneId(prenotazioneId))).build();
     }
 
     @GET
@@ -158,8 +158,8 @@ public abstract class RigaPrenotazioneControllerBase {
         if (entity.getRighePrenotazione() != null) {
             dto.setRighePrenotazioneId(entity.getRighePrenotazione().getId());
         }
-        if (entity.getRigaPrenotazione() != null) {
-            dto.setRigaPrenotazioneId(entity.getRigaPrenotazione().getId());
+        if (entity.getPrenotazione() != null) {
+            dto.setPrenotazioneId(entity.getPrenotazione().getId());
         }
         if (entity.getPrenotazioni() != null) {
             dto.setPrenotazioniId(entity.getPrenotazioni().getId());
@@ -195,10 +195,10 @@ public abstract class RigaPrenotazioneControllerBase {
             relationEntity.setId(dto.getRighePrenotazioneId());
             entity.setRighePrenotazione(relationEntity);
         }
-        if (dto.getRigaPrenotazioneId() != null) {
+        if (dto.getPrenotazioneId() != null) {
             Prenotazione relationEntity = new Prenotazione();
-            relationEntity.setId(dto.getRigaPrenotazioneId());
-            entity.setRigaPrenotazione(relationEntity);
+            relationEntity.setId(dto.getPrenotazioneId());
+            entity.setPrenotazione(relationEntity);
         }
         if (dto.getPrenotazioniId() != null) {
             Disponiblita relationEntity = new Disponiblita();

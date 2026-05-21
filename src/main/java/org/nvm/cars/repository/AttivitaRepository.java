@@ -35,9 +35,9 @@ public class AttivitaRepository extends SimpleRepositoryImpl<Attivita> {
         return query.getResultList();
     }
 
-    public List<Attivita> findByAttivitaId(Long id) {
+    public List<Attivita> findByTitolareId(Long id) {
         TypedQuery<Attivita> query = this.getEntityManager().createQuery(
-                "SELECT a FROM Attivita a WHERE a.attivita.id = :id",
+                "SELECT a FROM Attivita a WHERE a.titolare.id = :id",
                 Attivita.class);
         query.setParameter("id", id);
         return query.getResultList();

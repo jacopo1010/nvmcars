@@ -58,13 +58,13 @@ public class Attivita {
     @Column(name = "email", nullable = false, unique = true)
     private String email;
     /**
-     * Elemento generato automaticamente: attivita
+     * Elemento generato automaticamente: titolare
      */
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = { CascadeType.REMOVE })
     @Fetch(FetchMode.SELECT)
     @JoinColumn(name = "titolare_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Titolare attivita;
+    private Titolare titolare;
     /**
      * Elemento generato automaticamente: indirizzo
      */
@@ -81,13 +81,6 @@ public class Attivita {
     @JoinColumn(name = "listino_servizi_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private ListinoServizi listino;
-    /**
-     * Elemento generato automaticamente: disponiblita
-     */
-    @OneToOne(fetch = FetchType.LAZY)
-    @Fetch(FetchMode.SELECT)
-    @JoinColumn(name = "disponiblita_id")
-    private Disponiblita disponiblita;
     /**
      * Elemento generato automaticamente: disponibilita
      */
@@ -186,21 +179,21 @@ public class Attivita {
         this.email = email;
     }
     /**
-     * Restituisce attivita.
+     * Restituisce titolare.
      *
-     * @return elemento generato automaticamente: attivita
+     * @return elemento generato automaticamente: titolare
      */
-    public Titolare getAttivita() {
-        return this.attivita;
+    public Titolare getTitolare() {
+        return this.titolare;
     }
 
     /**
-     * Imposta attivita.
+     * Imposta titolare.
      *
-     * @param attivita elemento generato automaticamente: attivita
+     * @param titolare elemento generato automaticamente: titolare
      */
-    public void setAttivita(Titolare attivita) {
-        this.attivita = attivita;
+    public void setTitolare(Titolare titolare) {
+        this.titolare = titolare;
     }
     /**
      * Restituisce indirizzo.
@@ -235,23 +228,6 @@ public class Attivita {
      */
     public void setListino(ListinoServizi listino) {
         this.listino = listino;
-    }
-    /**
-     * Restituisce disponiblita.
-     *
-     * @return elemento generato automaticamente: disponiblita
-     */
-    public Disponiblita getDisponiblita() {
-        return this.disponiblita;
-    }
-
-    /**
-     * Imposta disponiblita.
-     *
-     * @param disponiblita elemento generato automaticamente: disponiblita
-     */
-    public void setDisponiblita(Disponiblita disponiblita) {
-        this.disponiblita = disponiblita;
     }
     /**
      * Restituisce disponibilita.

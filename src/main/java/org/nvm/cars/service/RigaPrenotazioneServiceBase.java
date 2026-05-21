@@ -56,8 +56,8 @@ public class RigaPrenotazioneServiceBase {
         return this.repository.findByRighePrenotazioneId(id);
     }
 
-    public List<RigaPrenotazione> findByRigaPrenotazioneId(Long id) {
-        return this.repository.findByRigaPrenotazioneId(id);
+    public List<RigaPrenotazione> findByPrenotazioneId(Long id) {
+        return this.repository.findByPrenotazioneId(id);
     }
 
     public List<RigaPrenotazione> findByPrenotazioniId(Long id) {
@@ -134,17 +134,17 @@ public class RigaPrenotazioneServiceBase {
             }
         }
 
-        Prenotazione rigaPrenotazione = entity.getRigaPrenotazione();
-        if (rigaPrenotazione == null || rigaPrenotazione.getId() == null) {
+        Prenotazione prenotazione = entity.getPrenotazione();
+        if (prenotazione == null || prenotazione.getId() == null) {
             throw new IllegalArgumentException("Prenotazione associato obbligatorio per RigaPrenotazione");
         }
-        if (rigaPrenotazione != null) {
-            if (rigaPrenotazione.getId() == null) {
+        if (prenotazione != null) {
+            if (prenotazione.getId() == null) {
                 throw new IllegalArgumentException("Id di Prenotazione associato obbligatorio");
             }
-            if (!this.prenotazioneRepository.existingById(rigaPrenotazione.getId())) {
+            if (!this.prenotazioneRepository.existingById(prenotazione.getId())) {
                 throw new IllegalArgumentException("Prenotazione associato non esistente: "
-                    + rigaPrenotazione.getId());
+                    + prenotazione.getId());
             }
         }
 

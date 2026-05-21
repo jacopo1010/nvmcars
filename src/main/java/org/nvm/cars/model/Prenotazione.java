@@ -59,7 +59,7 @@ public class Prenotazione {
     /**
      * Elemento generato automaticamente: rigaPrenotazione
      */
-    @OneToMany(mappedBy = "rigaPrenotazione", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE })
+    @OneToMany(mappedBy = "prenotazione", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE })
     @Fetch(FetchMode.SELECT)
     private List<RigaPrenotazione> rigaPrenotazione = new ArrayList<>();
 

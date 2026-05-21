@@ -33,7 +33,6 @@ CREATE TABLE IF NOT EXISTS attivita_registrate (
     titolare_id BIGINT NOT NULL,
     indirizzo_id BIGINT NOT NULL,
     listino_servizi_id BIGINT NOT NULL,
-    disponiblita_id BIGINT,
     PRIMARY KEY (id)
 );
 
@@ -83,7 +82,6 @@ CREATE TABLE IF NOT EXISTS disponibilita (
     data_ora_inizio TIMESTAMP NOT NULL,
     data_ora_fine TIMESTAMP NOT NULL,
     posti_disponibili INTEGER NOT NULL,
-    attivita_id BIGINT,
     servizio_id BIGINT NOT NULL,
     PRIMARY KEY (id)
 );
@@ -160,10 +158,6 @@ ALTER TABLE attivita_registrate
     ON DELETE CASCADE;
 
 ALTER TABLE attivita_registrate
-    ADD CONSTRAINT fk_attivita_registrate_disponiblita_id
-    FOREIGN KEY (disponiblita_id) REFERENCES disponibilita(id);
-
-ALTER TABLE attivita_registrate
     ADD CONSTRAINT uq_attivita_registrate_email
     UNIQUE (email);
 
@@ -195,10 +189,6 @@ ALTER TABLE prenotazioni
     ADD CONSTRAINT fk_prenotazioni_cliente_id
     FOREIGN KEY (cliente_id) REFERENCES clienti(id)
     ON DELETE CASCADE;
-
-ALTER TABLE disponibilita
-    ADD CONSTRAINT fk_disponibilita_attivita_id
-    FOREIGN KEY (attivita_id) REFERENCES attivita_registrate(id);
 
 ALTER TABLE disponibilita
     ADD CONSTRAINT fk_disponibilita_servizio_id

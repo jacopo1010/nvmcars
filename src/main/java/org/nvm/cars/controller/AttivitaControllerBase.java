@@ -119,12 +119,12 @@ public abstract class AttivitaControllerBase {
     }
 
     @GET
-    @Path("/by-attivita/{attivitaId}")
-    public Response findByAttivitaId(@PathParam("attivitaId") Long attivitaId) {
-        if (attivitaId == null) {
+    @Path("/by-titolare/{titolareId}")
+    public Response findByTitolareId(@PathParam("titolareId") Long titolareId) {
+        if (titolareId == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.ok(this.toDtoList(this.attivitaService.findByAttivitaId(attivitaId))).build();
+        return Response.ok(this.toDtoList(this.attivitaService.findByTitolareId(titolareId))).build();
     }
 
     @GET
@@ -146,17 +146,14 @@ public abstract class AttivitaControllerBase {
         dto.setDescrizione(entity.getDescrizione());
         dto.setNumero(entity.getNumero());
         dto.setEmail(entity.getEmail());
-        if (entity.getAttivita() != null) {
-            dto.setAttivitaId(entity.getAttivita().getId());
+        if (entity.getTitolare() != null) {
+            dto.setTitolareId(entity.getTitolare().getId());
         }
         if (entity.getIndirizzo() != null) {
             dto.setIndirizzoId(entity.getIndirizzo().getId());
         }
         if (entity.getListino() != null) {
             dto.setListinoId(entity.getListino().getId());
-        }
-        if (entity.getDisponiblita() != null) {
-            dto.setDisponiblitaId(entity.getDisponiblita().getId());
         }
         if (entity.getDisponibilita() != null) {
             List<Long> disponibilitaIds = new java.util.ArrayList<>();
@@ -191,10 +188,10 @@ public abstract class AttivitaControllerBase {
         entity.setDescrizione(dto.getDescrizione());
         entity.setNumero(dto.getNumero());
         entity.setEmail(dto.getEmail());
-        if (dto.getAttivitaId() != null) {
+        if (dto.getTitolareId() != null) {
             Titolare relationEntity = new Titolare();
-            relationEntity.setId(dto.getAttivitaId());
-            entity.setAttivita(relationEntity);
+            relationEntity.setId(dto.getTitolareId());
+            entity.setTitolare(relationEntity);
         }
         if (dto.getIndirizzoId() != null) {
             Indirizzo relationEntity = new Indirizzo();
@@ -205,11 +202,6 @@ public abstract class AttivitaControllerBase {
             ListinoServizi relationEntity = new ListinoServizi();
             relationEntity.setId(dto.getListinoId());
             entity.setListino(relationEntity);
-        }
-        if (dto.getDisponiblitaId() != null) {
-            Disponiblita relationEntity = new Disponiblita();
-            relationEntity.setId(dto.getDisponiblitaId());
-            entity.setDisponiblita(relationEntity);
         }
         if (dto.getDisponibilitaIds() != null) {
             List<Disponiblita> disponibilitaEntities = new java.util.ArrayList<>();

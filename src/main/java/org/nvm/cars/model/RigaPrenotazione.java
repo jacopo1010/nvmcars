@@ -55,13 +55,13 @@ public class RigaPrenotazione {
     @JoinColumn(name = "servizio_id", nullable = false)
     private Servizio righePrenotazione;
     /**
-     * Elemento generato automaticamente: rigaPrenotazione
+     * Elemento generato automaticamente: prenotazione
      */
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = { CascadeType.REMOVE })
     @Fetch(FetchMode.SELECT)
     @JoinColumn(name = "prenotazione_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Prenotazione rigaPrenotazione;
+    private Prenotazione prenotazione;
     /**
      * Elemento generato automaticamente: prenotazioni
      */
@@ -144,21 +144,21 @@ public class RigaPrenotazione {
         this.righePrenotazione = righePrenotazione;
     }
     /**
-     * Restituisce rigaPrenotazione.
+     * Restituisce prenotazione.
      *
-     * @return elemento generato automaticamente: rigaPrenotazione
+     * @return elemento generato automaticamente: prenotazione
      */
-    public Prenotazione getRigaPrenotazione() {
-        return this.rigaPrenotazione;
+    public Prenotazione getPrenotazione() {
+        return this.prenotazione;
     }
 
     /**
-     * Imposta rigaPrenotazione.
+     * Imposta prenotazione.
      *
-     * @param rigaPrenotazione elemento generato automaticamente: rigaPrenotazione
+     * @param prenotazione elemento generato automaticamente: prenotazione
      */
-    public void setRigaPrenotazione(Prenotazione rigaPrenotazione) {
-        this.rigaPrenotazione = rigaPrenotazione;
+    public void setPrenotazione(Prenotazione prenotazione) {
+        this.prenotazione = prenotazione;
     }
     /**
      * Restituisce prenotazioni.
