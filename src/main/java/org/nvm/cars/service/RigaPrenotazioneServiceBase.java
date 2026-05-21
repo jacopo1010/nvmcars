@@ -10,11 +10,11 @@ import jakarta.transaction.Transactional;
 import org.nvm.cars.model.RigaPrenotazione;
 import org.nvm.cars.model.Servizio;
 import org.nvm.cars.model.Prenotazione;
-import org.nvm.cars.model.Disponiblita;
+import org.nvm.cars.model.Disponibilita;
 import org.nvm.cars.repository.RigaPrenotazioneRepository;
 import org.nvm.cars.repository.ServizioRepository;
 import org.nvm.cars.repository.PrenotazioneRepository;
-import org.nvm.cars.repository.DisponiblitaRepository;
+import org.nvm.cars.repository.DisponibilitaRepository;
 
 @ApplicationScoped
 public class RigaPrenotazioneServiceBase {
@@ -26,7 +26,7 @@ public class RigaPrenotazioneServiceBase {
     @Inject
     protected PrenotazioneRepository prenotazioneRepository;
     @Inject
-    protected DisponiblitaRepository disponiblitaRepository;
+    protected DisponibilitaRepository disponibilitaRepository;
 
     // -------------------------------------------------------------------------
     // READ
@@ -148,16 +148,16 @@ public class RigaPrenotazioneServiceBase {
             }
         }
 
-        Disponiblita prenotazioni = entity.getPrenotazioni();
+        Disponibilita prenotazioni = entity.getPrenotazioni();
         if (prenotazioni == null || prenotazioni.getId() == null) {
-            throw new IllegalArgumentException("Disponiblita associato obbligatorio per RigaPrenotazione");
+            throw new IllegalArgumentException("Disponibilita associato obbligatorio per RigaPrenotazione");
         }
         if (prenotazioni != null) {
             if (prenotazioni.getId() == null) {
-                throw new IllegalArgumentException("Id di Disponiblita associato obbligatorio");
+                throw new IllegalArgumentException("Id di Disponibilita associato obbligatorio");
             }
-            if (!this.disponiblitaRepository.existingById(prenotazioni.getId())) {
-                throw new IllegalArgumentException("Disponiblita associato non esistente: "
+            if (!this.disponibilitaRepository.existingById(prenotazioni.getId())) {
+                throw new IllegalArgumentException("Disponibilita associato non esistente: "
                     + prenotazioni.getId());
             }
         }

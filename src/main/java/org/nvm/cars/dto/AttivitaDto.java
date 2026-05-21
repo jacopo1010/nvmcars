@@ -19,13 +19,11 @@ public class AttivitaDto {
 
     private String email;
 
-    private Long attivitaId;
+    private Long titolareId;
 
     private Long indirizzoId;
 
     private Long listinoId;
-
-    private Long disponiblitaId;
 
     private List<Long> disponibilitaIds = new ArrayList<>();
 
@@ -72,12 +70,12 @@ public class AttivitaDto {
         this.email = email;
     }
 
-    public Long getAttivitaId() {
-        return this.attivitaId;
+    public Long getTitolareId() {
+        return this.titolareId;
     }
 
-    public void setAttivitaId(Long attivitaId) {
-        this.attivitaId = attivitaId;
+    public void setTitolareId(Long titolareId) {
+        this.titolareId = titolareId;
     }
 
     public Long getIndirizzoId() {
@@ -94,14 +92,6 @@ public class AttivitaDto {
 
     public void setListinoId(Long listinoId) {
         this.listinoId = listinoId;
-    }
-
-    public Long getDisponiblitaId() {
-        return this.disponiblitaId;
-    }
-
-    public void setDisponiblitaId(Long disponiblitaId) {
-        this.disponiblitaId = disponiblitaId;
     }
 
     public List<Long> getDisponibilitaIds() {

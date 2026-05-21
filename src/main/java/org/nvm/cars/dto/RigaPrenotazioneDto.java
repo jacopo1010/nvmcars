@@ -15,7 +15,7 @@ public class RigaPrenotazioneDto {
 
     private Long righePrenotazioneId;
 
-    private Long rigaPrenotazioneId;
+    private Long prenotazioneId;
 
     private Long prenotazioniId;
 
@@ -54,12 +54,12 @@ public class RigaPrenotazioneDto {
         this.righePrenotazioneId = righePrenotazioneId;
     }
 
-    public Long getRigaPrenotazioneId() {
-        return this.rigaPrenotazioneId;
+    public Long getPrenotazioneId() {
+        return this.prenotazioneId;
     }
 
-    public void setRigaPrenotazioneId(Long rigaPrenotazioneId) {
-        this.rigaPrenotazioneId = rigaPrenotazioneId;
+    public void setPrenotazioneId(Long prenotazioneId) {
+        this.prenotazioneId = prenotazioneId;
     }
 
     public Long getPrenotazioniId() {

@@ -82,6 +82,7 @@ CREATE TABLE IF NOT EXISTS disponibilita (
     data_ora_inizio TIMESTAMP NOT NULL,
     data_ora_fine TIMESTAMP NOT NULL,
     posti_disponibili INTEGER NOT NULL,
+    attivita_id BIGINT NOT NULL,
     servizio_id BIGINT NOT NULL,
     PRIMARY KEY (id)
 );
@@ -117,7 +118,7 @@ CREATE TABLE IF NOT EXISTS righe_prenotazione (
     automobile_id BIGINT,
     servizio_id BIGINT NOT NULL,
     prenotazione_id BIGINT NOT NULL,
-    disponiblita_id BIGINT NOT NULL,
+    disponibilita_id BIGINT NOT NULL,
     PRIMARY KEY (id)
 );
 
@@ -191,6 +192,11 @@ ALTER TABLE prenotazioni
     ON DELETE CASCADE;
 
 ALTER TABLE disponibilita
+    ADD CONSTRAINT fk_disponibilita_attivita_id
+    FOREIGN KEY (attivita_id) REFERENCES attivita_registrate(id)
+    ON DELETE CASCADE;
+
+ALTER TABLE disponibilita
     ADD CONSTRAINT fk_disponibilita_servizio_id
     FOREIGN KEY (servizio_id) REFERENCES servizi(id)
     ON DELETE CASCADE;
@@ -232,8 +238,8 @@ ALTER TABLE righe_prenotazione
     ON DELETE CASCADE;
 
 ALTER TABLE righe_prenotazione
-    ADD CONSTRAINT fk_righe_prenotazione_disponiblita_id
-    FOREIGN KEY (disponiblita_id) REFERENCES disponibilita(id)
+    ADD CONSTRAINT fk_righe_prenotazione_disponibilita_id
+    FOREIGN KEY (disponibilita_id) REFERENCES disponibilita(id)
     ON DELETE RESTRICT;
 
 

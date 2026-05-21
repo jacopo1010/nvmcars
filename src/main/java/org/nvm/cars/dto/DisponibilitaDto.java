@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.ArrayList;
 
 /**
- * DTO generato automaticamente per Disponiblita.
+ * DTO generato automaticamente per Disponibilita.
  */
-public class DisponiblitaDto {
+public class DisponibilitaDto {
 
     private Long id;
 
@@ -20,11 +20,11 @@ public class DisponiblitaDto {
 
     private Long attivitaId;
 
-    private Long disponibilitaId;
+    private Long servizioId;
 
     private List<Long> prenotazioniIds = new ArrayList<>();
 
-    public DisponiblitaDto() {
+    public DisponibilitaDto() {
     }
 
     public Long getId() {
@@ -67,12 +67,12 @@ public class DisponiblitaDto {
         this.attivitaId = attivitaId;
     }
 
-    public Long getDisponibilitaId() {
-        return this.disponibilitaId;
+    public Long getServizioId() {
+        return this.servizioId;
     }
 
-    public void setDisponibilitaId(Long disponibilitaId) {
-        this.disponibilitaId = disponibilitaId;
+    public void setServizioId(Long servizioId) {
+        this.servizioId = servizioId;
     }
 
     public List<Long> getPrenotazioniIds() {

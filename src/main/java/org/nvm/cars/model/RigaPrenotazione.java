@@ -67,8 +67,8 @@ public class RigaPrenotazione {
      */
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @Fetch(FetchMode.SELECT)
-    @JoinColumn(name = "disponiblita_id", nullable = false)
-    private Disponiblita prenotazioni;
+    @JoinColumn(name = "disponibilita_id", nullable = false)
+    private Disponibilita prenotazioni;
 
     // --- COSTRUTTORE ---
     public RigaPrenotazione() {
@@ -165,7 +165,7 @@ public class RigaPrenotazione {
      *
      * @return elemento generato automaticamente: prenotazioni
      */
-    public Disponiblita getPrenotazioni() {
+    public Disponibilita getPrenotazioni() {
         return this.prenotazioni;
     }
 
@@ -174,7 +174,7 @@ public class RigaPrenotazione {
      *
      * @param prenotazioni elemento generato automaticamente: prenotazioni
      */
-    public void setPrenotazioni(Disponiblita prenotazioni) {
+    public void setPrenotazioni(Disponibilita prenotazioni) {
         this.prenotazioni = prenotazioni;
     }
 }

@@ -24,7 +24,7 @@ public class IndirizzoDto {
 
     private BigDecimal longitudine;
 
-    private Long indirizzoId;
+    private Long attivitaId;
 
     public IndirizzoDto() {
     }
@@ -93,11 +93,11 @@ public class IndirizzoDto {
         this.longitudine = longitudine;
     }
 
-    public Long getIndirizzoId() {
-        return this.indirizzoId;
+    public Long getAttivitaId() {
+        return this.attivitaId;
     }
 
-    public void setIndirizzoId(Long indirizzoId) {
-        this.indirizzoId = indirizzoId;
+    public void setAttivitaId(Long attivitaId) {
+        this.attivitaId = attivitaId;
     }
 }

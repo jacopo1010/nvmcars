@@ -24,11 +24,11 @@ import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 /**
- * Elemento generato automaticamente: Disponiblita
+ * Elemento generato automaticamente: Disponibilita
  */
 @Entity
 @Table(name = "disponibilita")
-public class Disponiblita {
+public class Disponibilita {
 
     // --- ATTRIBUTI SEMPLICI ---
     /**
@@ -54,13 +54,21 @@ public class Disponiblita {
     @Column(name = "posti_disponibili", nullable = false)
     private Integer postiDisponibili;
     /**
-     * Elemento generato automaticamente: disponibilita
+     * Elemento generato automaticamente: attivita
+     */
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = { CascadeType.REMOVE })
+    @Fetch(FetchMode.SELECT)
+    @JoinColumn(name = "attivita_id", nullable = false)
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    private Attivita attivita;
+    /**
+     * Elemento generato automaticamente: servizio
      */
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = { CascadeType.REMOVE })
     @Fetch(FetchMode.SELECT)
     @JoinColumn(name = "servizio_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Servizio disponibilita;
+    private Servizio servizio;
     /**
      * Elemento generato automaticamente: prenotazioni
      */
@@ -69,7 +77,7 @@ public class Disponiblita {
     private List<RigaPrenotazione> prenotazioni = new ArrayList<>();
 
     // --- COSTRUTTORE ---
-    public Disponiblita() {
+    public Disponibilita() {
     }
 
     // --- GETTER E SETTER ---
@@ -142,21 +150,38 @@ public class Disponiblita {
         this.postiDisponibili = postiDisponibili;
     }
     /**
-     * Restituisce disponibilita.
+     * Restituisce attivita.
      *
-     * @return elemento generato automaticamente: disponibilita
+     * @return elemento generato automaticamente: attivita
      */
-    public Servizio getDisponibilita() {
-        return this.disponibilita;
+    public Attivita getAttivita() {
+        return this.attivita;
     }
 
     /**
-     * Imposta disponibilita.
+     * Imposta attivita.
      *
-     * @param disponibilita elemento generato automaticamente: disponibilita
+     * @param attivita elemento generato automaticamente: attivita
      */
-    public void setDisponibilita(Servizio disponibilita) {
-        this.disponibilita = disponibilita;
+    public void setAttivita(Attivita attivita) {
+        this.attivita = attivita;
+    }
+    /**
+     * Restituisce servizio.
+     *
+     * @return elemento generato automaticamente: servizio
+     */
+    public Servizio getServizio() {
+        return this.servizio;
+    }
+
+    /**
+     * Imposta servizio.
+     *
+     * @param servizio elemento generato automaticamente: servizio
+     */
+    public void setServizio(Servizio servizio) {
+        this.servizio = servizio;
     }
     /**
      * Restituisce prenotazioni.

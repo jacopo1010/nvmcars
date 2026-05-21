@@ -18,7 +18,7 @@ import org.nvm.cars.model.RigaPrenotazione;
 import org.nvm.cars.model.Automobile;
 import org.nvm.cars.model.Servizio;
 import org.nvm.cars.model.Prenotazione;
-import org.nvm.cars.model.Disponiblita;
+import org.nvm.cars.model.Disponibilita;
 import org.nvm.cars.dto.RigaPrenotazioneDto;
 import org.nvm.cars.service.RigaPrenotazioneService;
 
@@ -201,7 +201,7 @@ public abstract class RigaPrenotazioneControllerBase {
             entity.setPrenotazione(relationEntity);
         }
         if (dto.getPrenotazioniId() != null) {
-            Disponiblita relationEntity = new Disponiblita();
+            Disponibilita relationEntity = new Disponibilita();
             relationEntity.setId(dto.getPrenotazioniId());
             entity.setPrenotazioni(relationEntity);
         }

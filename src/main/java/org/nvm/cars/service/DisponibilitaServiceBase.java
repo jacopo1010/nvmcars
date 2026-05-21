@@ -7,16 +7,20 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 
-import org.nvm.cars.model.Disponiblita;
+import org.nvm.cars.model.Disponibilita;
+import org.nvm.cars.model.Attivita;
 import org.nvm.cars.model.Servizio;
-import org.nvm.cars.repository.DisponiblitaRepository;
+import org.nvm.cars.repository.DisponibilitaRepository;
+import org.nvm.cars.repository.AttivitaRepository;
 import org.nvm.cars.repository.ServizioRepository;
 
 @ApplicationScoped
-public class DisponiblitaServiceBase {
+public class DisponibilitaServiceBase {
 
     @Inject
-    protected DisponiblitaRepository repository;
+    protected DisponibilitaRepository repository;
+    @Inject
+    protected AttivitaRepository attivitaRepository;
     @Inject
     protected ServizioRepository servizioRepository;
 
@@ -24,11 +28,11 @@ public class DisponiblitaServiceBase {
     // READ
     // -------------------------------------------------------------------------
 
-    public List<Disponiblita> findAll() {
+    public List<Disponibilita> findAll() {
         return this.repository.findAll();
     }
 
-    public Optional<Disponiblita> findById(Long id) {
+    public Optional<Disponibilita> findById(Long id) {
         return Optional.ofNullable(this.repository.findById(id));
     }
 
@@ -40,11 +44,15 @@ public class DisponiblitaServiceBase {
         return this.repository.count();
     }
 
-    public List<Disponiblita> findByDisponibilitaId(Long id) {
-        return this.repository.findByDisponibilitaId(id);
+    public List<Disponibilita> findByAttivitaId(Long id) {
+        return this.repository.findByAttivitaId(id);
     }
 
-    public List<Disponiblita> findByPrenotazioniId(Long id) {
+    public List<Disponibilita> findByServizioId(Long id) {
+        return this.repository.findByServizioId(id);
+    }
+
+    public List<Disponibilita> findByPrenotazioniId(Long id) {
         return this.repository.findByPrenotazioniId(id);
     }
 
@@ -54,13 +62,13 @@ public class DisponiblitaServiceBase {
     // -------------------------------------------------------------------------
 
     @Transactional
-    public Disponiblita save(Disponiblita entity) {
+    public Disponibilita save(Disponibilita entity) {
         this.prepareForCreate(entity);
         return this.repository.save(entity);
     }
 
     @Transactional
-    public boolean update(Disponiblita entity) {
+    public boolean update(Disponibilita entity) {
         this.prepareForUpdate(entity);
         return this.repository.update(entity);
     }
@@ -71,7 +79,7 @@ public class DisponiblitaServiceBase {
 
     @Transactional
     public boolean delete(Long id) {
-        Disponiblita entity = this.repository.findById(id);
+        Disponibilita entity = this.repository.findById(id);
         if (entity == null) {
             return false;
         }
@@ -88,33 +96,47 @@ public class DisponiblitaServiceBase {
     // VALIDAZIONE
     // -------------------------------------------------------------------------
 
-    private void prepareForCreate(Disponiblita entity) {
+    private void prepareForCreate(Disponibilita entity) {
         this.validateEntityForWrite(entity);
     }
 
-    private void prepareForUpdate(Disponiblita entity) {
+    private void prepareForUpdate(Disponibilita entity) {
         this.validateEntityForWrite(entity);
         if (entity.getId() == null) {
-            throw new IllegalArgumentException("Id obbligatorio per l'aggiornamento di Disponiblita");
+            throw new IllegalArgumentException("Id obbligatorio per l'aggiornamento di Disponibilita");
         }
     }
 
-    private void validateEntityForWrite(Disponiblita entity) {
+    private void validateEntityForWrite(Disponibilita entity) {
         if (entity == null) {
-            throw new IllegalArgumentException("Disponiblita obbligatorio");
+            throw new IllegalArgumentException("Disponibilita obbligatorio");
         }
 
-        Servizio disponibilita = entity.getDisponibilita();
-        if (disponibilita == null || disponibilita.getId() == null) {
-            throw new IllegalArgumentException("Servizio associato obbligatorio per Disponiblita");
+        Attivita attivita = entity.getAttivita();
+        if (attivita == null || attivita.getId() == null) {
+            throw new IllegalArgumentException("Attivita associato obbligatorio per Disponibilita");
         }
-        if (disponibilita != null) {
-            if (disponibilita.getId() == null) {
+        if (attivita != null) {
+            if (attivita.getId() == null) {
+                throw new IllegalArgumentException("Id di Attivita associato obbligatorio");
+            }
+            if (!this.attivitaRepository.existingById(attivita.getId())) {
+                throw new IllegalArgumentException("Attivita associato non esistente: "
+                    + attivita.getId());
+            }
+        }
+
+        Servizio servizio = entity.getServizio();
+        if (servizio == null || servizio.getId() == null) {
+            throw new IllegalArgumentException("Servizio associato obbligatorio per Disponibilita");
+        }
+        if (servizio != null) {
+            if (servizio.getId() == null) {
                 throw new IllegalArgumentException("Id di Servizio associato obbligatorio");
             }
-            if (!this.servizioRepository.existingById(disponibilita.getId())) {
+            if (!this.servizioRepository.existingById(servizio.getId())) {
                 throw new IllegalArgumentException("Servizio associato non esistente: "
-                    + disponibilita.getId());
+                    + servizio.getId());
             }
         }
     }

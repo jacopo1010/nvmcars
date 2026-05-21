@@ -18,7 +18,7 @@ import org.nvm.cars.model.Attivita;
 import org.nvm.cars.model.Titolare;
 import org.nvm.cars.model.Indirizzo;
 import org.nvm.cars.model.ListinoServizi;
-import org.nvm.cars.model.Disponiblita;
+import org.nvm.cars.model.Disponibilita;
 import org.nvm.cars.dto.AttivitaDto;
 import org.nvm.cars.service.AttivitaService;
 
@@ -157,7 +157,7 @@ public abstract class AttivitaControllerBase {
         }
         if (entity.getDisponibilita() != null) {
             List<Long> disponibilitaIds = new java.util.ArrayList<>();
-            for (Disponiblita relationEntity : entity.getDisponibilita()) {
+            for (Disponibilita relationEntity : entity.getDisponibilita()) {
                 if (relationEntity != null && relationEntity.getId() != null) {
                     disponibilitaIds.add(relationEntity.getId());
                 }
@@ -204,10 +204,10 @@ public abstract class AttivitaControllerBase {
             entity.setListino(relationEntity);
         }
         if (dto.getDisponibilitaIds() != null) {
-            List<Disponiblita> disponibilitaEntities = new java.util.ArrayList<>();
+            List<Disponibilita> disponibilitaEntities = new java.util.ArrayList<>();
             for (Long relationId : dto.getDisponibilitaIds()) {
                 if (relationId != null) {
-                    Disponiblita relationEntity = new Disponiblita();
+                    Disponibilita relationEntity = new Disponibilita();
                     relationEntity.setId(relationId);
                     disponibilitaEntities.add(relationEntity);
                 }

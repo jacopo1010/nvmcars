@@ -14,52 +14,53 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Response;
-import org.nvm.cars.model.Disponiblita;
+import org.nvm.cars.model.Disponibilita;
+import org.nvm.cars.model.Attivita;
 import org.nvm.cars.model.Servizio;
 import org.nvm.cars.model.RigaPrenotazione;
-import org.nvm.cars.dto.DisponiblitaDto;
-import org.nvm.cars.service.DisponiblitaService;
+import org.nvm.cars.dto.DisponibilitaDto;
+import org.nvm.cars.service.DisponibilitaService;
 
-public abstract class DisponiblitaControllerBase {
+public abstract class DisponibilitaControllerBase {
 
     @Inject
-    protected DisponiblitaService disponiblitaService;
+    protected DisponibilitaService disponibilitaService;
 
     @GET
-    public Response getAllDisponiblitas() {
-        List<Disponiblita> disponiblitas = this.disponiblitaService.findAll();
-        return Response.ok(this.toDtoList(disponiblitas)).build();
+    public Response getAllDisponibilitas() {
+        List<Disponibilita> disponibilitas = this.disponibilitaService.findAll();
+        return Response.ok(this.toDtoList(disponibilitas)).build();
     }
 
     @GET
     @Path("/count")
-    public Response countDisponiblitas() {
-        return Response.ok(this.disponiblitaService.count()).build();
+    public Response countDisponibilitas() {
+        return Response.ok(this.disponibilitaService.count()).build();
     }
 
     @GET
     @Path("/exists/{id}")
-    public Response existsDisponiblita(@PathParam("id") Long id) {
+    public Response existsDisponibilita(@PathParam("id") Long id) {
         if (id == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.ok(this.disponiblitaService.existsById(id)).build();
+        return Response.ok(this.disponibilitaService.existsById(id)).build();
     }
 
     @GET
     @Path("/{id}")
-    public Response getDisponiblita(@PathParam("id") Long id) {
-        Optional<Disponiblita> disponiblita = this.disponiblitaService.findById(id);
-        if (!disponiblita.isPresent()) {
+    public Response getDisponibilita(@PathParam("id") Long id) {
+        Optional<Disponibilita> disponibilita = this.disponibilitaService.findById(id);
+        if (!disponibilita.isPresent()) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
-        return Response.ok(this.toDto(disponiblita.get())).build();
+        return Response.ok(this.toDto(disponibilita.get())).build();
     }
 
     @POST
-    public Response createDisponiblita(DisponiblitaDto disponiblita) {
+    public Response createDisponibilita(DisponibilitaDto disponibilita) {
         try {
-            Disponiblita created = this.disponiblitaService.save(this.toEntity(disponiblita));
+            Disponibilita created = this.disponibilitaService.save(this.toEntity(disponibilita));
             if (created.getId() == null) {
                 return Response.serverError().build();
             }
@@ -71,14 +72,14 @@ public abstract class DisponiblitaControllerBase {
 
     @PUT
     @Path("/{id}")
-    public Response updateDisponiblita(@PathParam("id") Long id, DisponiblitaDto disponiblita) {
-        if (disponiblita == null) {
+    public Response updateDisponibilita(@PathParam("id") Long id, DisponibilitaDto disponibilita) {
+        if (disponibilita == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
         try {
-            disponiblita.setId(id);
-            Disponiblita entity = this.toEntity(disponiblita);
-            boolean updated = this.disponiblitaService.update(entity);
+            disponibilita.setId(id);
+            Disponibilita entity = this.toEntity(disponibilita);
+            boolean updated = this.disponibilitaService.update(entity);
             if (!updated) {
                 return Response.status(Response.Status.BAD_REQUEST).build();
             }
@@ -90,7 +91,7 @@ public abstract class DisponiblitaControllerBase {
 
     @DELETE
     public Response deleteAll() {
-        this.disponiblitaService.deleteAll();
+        this.disponibilitaService.deleteAll();
         return Response.noContent().build();
     }
 
@@ -100,7 +101,7 @@ public abstract class DisponiblitaControllerBase {
         if (id == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        boolean deleted = this.disponiblitaService.delete(id);
+        boolean deleted = this.disponibilitaService.delete(id);
         if (!deleted) {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
@@ -108,12 +109,21 @@ public abstract class DisponiblitaControllerBase {
     }
 
     @GET
-    @Path("/by-disponibilita/{disponibilitaId}")
-    public Response findByDisponibilitaId(@PathParam("disponibilitaId") Long disponibilitaId) {
-        if (disponibilitaId == null) {
+    @Path("/by-attivita/{attivitaId}")
+    public Response findByAttivitaId(@PathParam("attivitaId") Long attivitaId) {
+        if (attivitaId == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.ok(this.toDtoList(this.disponiblitaService.findByDisponibilitaId(disponibilitaId))).build();
+        return Response.ok(this.toDtoList(this.disponibilitaService.findByAttivitaId(attivitaId))).build();
+    }
+
+    @GET
+    @Path("/by-servizio/{servizioId}")
+    public Response findByServizioId(@PathParam("servizioId") Long servizioId) {
+        if (servizioId == null) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        return Response.ok(this.toDtoList(this.disponibilitaService.findByServizioId(servizioId))).build();
     }
 
     @GET
@@ -122,20 +132,23 @@ public abstract class DisponiblitaControllerBase {
         if (prenotazioniId == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.ok(this.toDtoList(this.disponiblitaService.findByPrenotazioniId(prenotazioniId))).build();
+        return Response.ok(this.toDtoList(this.disponibilitaService.findByPrenotazioniId(prenotazioniId))).build();
     }
 
-    protected DisponiblitaDto toDto(Disponiblita entity) {
+    protected DisponibilitaDto toDto(Disponibilita entity) {
         if (entity == null) {
             return null;
         }
-        DisponiblitaDto dto = new DisponiblitaDto();
+        DisponibilitaDto dto = new DisponibilitaDto();
         dto.setId(entity.getId());
         dto.setDataOraInizio(entity.getDataOraInizio());
         dto.setDataOraFine(entity.getDataOraFine());
         dto.setPostiDisponibili(entity.getPostiDisponibili());
-        if (entity.getDisponibilita() != null) {
-            dto.setDisponibilitaId(entity.getDisponibilita().getId());
+        if (entity.getAttivita() != null) {
+            dto.setAttivitaId(entity.getAttivita().getId());
+        }
+        if (entity.getServizio() != null) {
+            dto.setServizioId(entity.getServizio().getId());
         }
         if (entity.getPrenotazioni() != null) {
             List<Long> prenotazioniIds = new java.util.ArrayList<>();
@@ -149,30 +162,35 @@ public abstract class DisponiblitaControllerBase {
         return dto;
     }
 
-    protected List<DisponiblitaDto> toDtoList(List<Disponiblita> entities) {
-        List<DisponiblitaDto> result = new java.util.ArrayList<>();
+    protected List<DisponibilitaDto> toDtoList(List<Disponibilita> entities) {
+        List<DisponibilitaDto> result = new java.util.ArrayList<>();
         if (entities == null) {
             return result;
         }
-        for (Disponiblita entity : entities) {
+        for (Disponibilita entity : entities) {
             result.add(this.toDto(entity));
         }
         return result;
     }
 
-    protected Disponiblita toEntity(DisponiblitaDto dto) {
+    protected Disponibilita toEntity(DisponibilitaDto dto) {
         if (dto == null) {
             return null;
         }
-        Disponiblita entity = new Disponiblita();
+        Disponibilita entity = new Disponibilita();
         entity.setId(dto.getId());
         entity.setDataOraInizio(dto.getDataOraInizio());
         entity.setDataOraFine(dto.getDataOraFine());
         entity.setPostiDisponibili(dto.getPostiDisponibili());
-        if (dto.getDisponibilitaId() != null) {
+        if (dto.getAttivitaId() != null) {
+            Attivita relationEntity = new Attivita();
+            relationEntity.setId(dto.getAttivitaId());
+            entity.setAttivita(relationEntity);
+        }
+        if (dto.getServizioId() != null) {
             Servizio relationEntity = new Servizio();
-            relationEntity.setId(dto.getDisponibilitaId());
-            entity.setDisponibilita(relationEntity);
+            relationEntity.setId(dto.getServizioId());
+            entity.setServizio(relationEntity);
         }
         if (dto.getPrenotazioniIds() != null) {
             List<RigaPrenotazione> prenotazioniEntities = new java.util.ArrayList<>();

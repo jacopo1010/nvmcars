@@ -11,5 +11,5 @@ import jakarta.ws.rs.core.MediaType;
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 @RequestScoped
-public class DisponiblitaController extends DisponiblitaControllerBase {
+public class DisponibilitaController extends DisponibilitaControllerBase {
 }
