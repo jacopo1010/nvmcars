@@ -44,9 +44,8 @@ public class Credenziali {
     /**
      * Elemento generato automaticamente: possiede
      */
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToOne(mappedBy = "possiede"  ,fetch = FetchType.LAZY, optional = false)
     @Fetch(FetchMode.SELECT)
-    @JoinColumn(name = "titolare_id", nullable = false)
     private Titolare possiede;
 
     // --- COSTRUTTORE ---

@@ -8,6 +8,11 @@ import org.nvm.cars.model.Credenziali;
 @ApplicationScoped
 public class CredenzialiService extends CredenzialiServiceBase {
 
+    public Credenziali findByUsername(String username)
+    {
+        return this.repository.findByUsername(username);
+    }
+
     public boolean SavePassword(String email, String password)
     {
       //da implementare
