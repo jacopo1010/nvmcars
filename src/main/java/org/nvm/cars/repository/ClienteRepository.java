@@ -33,6 +33,14 @@ public class ClienteRepository extends SimpleRepositoryImpl<Cliente> {
         return query.getResultList();
     }
 
+    public List<Cliente> findByAutomobiliId(Long id) {
+        TypedQuery<Cliente> query = this.getEntityManager().createQuery(
+                "SELECT DISTINCT c FROM Cliente c JOIN c.automobili relation WHERE relation.id = :id",
+                Cliente.class);
+        query.setParameter("id", id);
+        return query.getResultList();
+    }
+
     public List<Cliente> findByPrenotazioniId(Long id) {
         TypedQuery<Cliente> query = this.getEntityManager().createQuery(
                 "SELECT DISTINCT c FROM Cliente c JOIN c.prenotazioni relation WHERE relation.id = :id",

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.1" xmlns:uml="http://schema.omg.org/spec/UML/2.0" xmlns:xmi="http://schema.omg.org/spec/XMI/2.1">
 	<xmi:Documentation exporter="StarUML" exporterVersion="2.0"/>
-	<uml:Model xmi:id="AAAAAAGeSvTTEb6zkA4=" xmi:type="uml:Model" name="RootModel">
+	<uml:Model xmi:id="AAAAAAGeTspFRtlFQ9s=" xmi:type="uml:Model" name="RootModel">
 		<packagedElement xmi:id="AAAAAAFF+qBWK6M3Z8Y=" name="Model" visibility="public" xmi:type="uml:Model">
 			<packagedElement xmi:id="AAAAAAGeR2Y0rKq/9ws=" name="Cliente" visibility="public" isAbstract="false" isFinalSpecialization="false" isLeaf="false" xmi:type="uml:Class" isActive="false">
-				<ownedMember xmi:id="AAAAAAGeR3urwK3IFJ0=" name="possiede" visibility="public" xmi:type="uml:Association" isDerived="false">
+				<ownedMember xmi:id="AAAAAAGeR3urwK3IFJ0=" name="automobili" visibility="public" xmi:type="uml:Association" isDerived="false">
 					<xmi:Extension extender="StarUML">
 						<tag cascade="remove"/>
 					</xmi:Extension>
@@ -12,15 +12,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTE7628lY=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTE763F0g=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFR9lIMz0=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFR9lJxow=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeR3urwK3K1JA=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeR2azKas+x+g=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTE764shM=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
-						<upperValue xmi:id="AAAAAAGeSvTTE7650Dg=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<lowerValue xmi:id="AAAAAAGeTspFR9lKiMs=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<upperValue xmi:id="AAAAAAGeTspFR9lLDzc=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeR3urwK3Je+s="/>
 					<memberEnd xmi:idref="AAAAAAGeR3urwK3K1JA="/>
@@ -33,15 +33,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTE768+vo=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTE769thk=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFR9lOp4Q=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFR9lP8/I=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeScGLtV3E1bg=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeR2hqZau/EhA=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFL6+jII=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFL6/5Ug=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<lowerValue xmi:id="AAAAAAGeTspFR9lQ0qs=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<upperValue xmi:id="AAAAAAGeTspFR9lRYko=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeScGLtV3Dn6g="/>
 					<memberEnd xmi:idref="AAAAAAGeScGLtV3E1bg="/>
@@ -81,15 +81,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFL7CDLY=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFL7DKQE=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFR9lUXgM=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFR9lV+MY=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeSaaCuCftPFI=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeR2aVx6sUbgQ=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFL7ERI8=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFL7FnFw=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<lowerValue xmi:id="AAAAAAGeTspFR9lWNXc=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<upperValue xmi:id="AAAAAAGeTspFR9lX5oE=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeSaaCuCfs+nE="/>
 					<memberEnd xmi:idref="AAAAAAGeSaaCuCftPFI="/>
@@ -149,15 +149,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFb7IsrM=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFb7JOeA=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFR9latnY=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFR9lb3ms=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeSahHYkUrZhE=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeSaS5vxylYgU=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFb7KFis=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFb7LecY=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFR9lcnp8=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFR9ldL/w=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeSahHYkUqoDs="/>
 					<memberEnd xmi:idref="AAAAAAGeSahHYkUrZhE="/>
@@ -170,15 +170,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFb7Ofvg=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFb7PFFU=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNlgCuk=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNlhneo=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeSa/yWRJf/z8=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeR2biuatoL8M=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFb7QNAg=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFb7RkUY=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNli1tk=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNljBEc=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeSa/yWRJebFY="/>
 					<memberEnd xmi:idref="AAAAAAGeSa/yWRJf/z8="/>
@@ -191,15 +191,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFb7UjDI=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFb7VVsU=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNlmabk=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNlnKz0=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeSb6B4efuexc=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeR2lKVavsKgw=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFb7WTeU=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFb7X/CA=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNloLho=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNlp7OQ=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeSb6B4eftSWM="/>
 					<memberEnd xmi:idref="AAAAAAGeSb6B4efuexc="/>
@@ -236,15 +236,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFr7azT4=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFr7b+m8=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNlswtY=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNltDC4=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeScd0wB2NZ6w=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeScNSEZhM914=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFr7caiY=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFr7dUkw=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNluPpw=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNlvf30=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeScd0wB2MFEY="/>
 					<memberEnd xmi:idref="AAAAAAGeScd0wB2NZ6w="/>
@@ -285,15 +285,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFr7gNHw=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFr7h1v8=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNlyJJU=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNlzR1A=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeSbS5a12hXBk=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeR2eho6uV4bQ=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFr7i8bc=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFr7jbi0=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNl0tQ0=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNl1wew=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeSbS5a12gzXE="/>
 					<memberEnd xmi:idref="AAAAAAGeSbS5a12hXBk="/>
@@ -318,15 +318,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFr7mfYI=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFr7nL34=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNl4ctY=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNl59t0=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeSb+d5xzFtWQ=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeR2lKVavsKgw=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFr7oZTY=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFr7plxg=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNl6cWE=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNl7mxQ=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeSb+d5xzEkOk="/>
 					<memberEnd xmi:idref="AAAAAAGeSb+d5xzFtWQ="/>
@@ -339,15 +339,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFr7sqUc=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFr7ttAk=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNl+obA=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNl/MOQ=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeSeWNOXanv8I=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeScNSEZhM914=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTFr7uCEE=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
-						<upperValue xmi:id="AAAAAAGeSvTTFr7v/gk=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNmA31Q=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNmBHuk=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeSeWNOXamhKY="/>
 					<memberEnd xmi:idref="AAAAAAGeSeWNOXanv8I="/>
@@ -387,15 +387,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTF77yRAc=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTF77zL7M=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNmEDzI=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNmFt7g=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeScRhOqdE7O4=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeScNSEZhM914=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTF770IBc=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
-						<upperValue xmi:id="AAAAAAGeSvTTF77163c=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNmGIG4=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNmHPlk=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeScRhOqdDCb4="/>
 					<memberEnd xmi:idref="AAAAAAGeScRhOqdE7O4="/>
@@ -425,15 +425,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTF774mLE=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTF775kX8=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNmKgo8=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNmLl30=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeScUs68nwfM4=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeScNSEZhM914=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTF776bT0=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
-						<upperValue xmi:id="AAAAAAGeSvTTF7770XA=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNmMhpE=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNmNLYA=" xmi:type="uml:LiteralUnlimitedNatural" value="*"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeScUs68nvMpg="/>
 					<memberEnd xmi:idref="AAAAAAGeScUs68nwfM4="/>
@@ -465,15 +465,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTF77+Y8I=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTF77/3O4=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNmQap4=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSNmRPd4=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeR7hfrrfujoY=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeR2Y0rKq/9ws=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTF78AMzg=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTF78BOjs=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSNmS7Bc=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSdmTid0=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeR7hfrrftlls="/>
 					<memberEnd xmi:idref="AAAAAAGeR7hfrrfujoY="/>
@@ -483,15 +483,15 @@
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTF78ET6M=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTF78Fu+M=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSdmWuGU=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSdmXX6E=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<ownedEnd xmi:id="AAAAAAGeR78GYMmPfDk=" visibility="public" isStatic="false" isLeaf="false" isReadOnly="false" isOrdered="false" isUnique="false" xmi:type="uml:Property" aggregation="none" isDerived="false" isID="false" type="AAAAAAGeR2Zoi6rqH3g=">
 						<xmi:Extension extender="StarUML">
 							<stereotype value=""/>
 						</xmi:Extension>
-						<lowerValue xmi:id="AAAAAAGeSvTTF78Gflo=" xmi:type="uml:LiteralInteger" value="1"/>
-						<upperValue xmi:id="AAAAAAGeSvTTGL8H0EE=" xmi:type="uml:LiteralInteger" value="1"/>
+						<lowerValue xmi:id="AAAAAAGeTspFSdmY6hU=" xmi:type="uml:LiteralInteger" value="1"/>
+						<upperValue xmi:id="AAAAAAGeTspFSdmZED0=" xmi:type="uml:LiteralInteger" value="1"/>
 					</ownedEnd>
 					<memberEnd xmi:idref="AAAAAAGeR78GYMmOkgY="/>
 					<memberEnd xmi:idref="AAAAAAGeR78GYMmPfDk="/>

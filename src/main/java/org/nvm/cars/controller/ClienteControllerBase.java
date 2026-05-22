@@ -15,8 +15,9 @@ import jakarta.ws.rs.PathParam;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.Response;
 import org.nvm.cars.model.Cliente;
-import org.nvm.cars.model.Credenziali;
+import org.nvm.cars.model.Automobile;
 import org.nvm.cars.model.Prenotazione;
+import org.nvm.cars.model.Credenziali;
 import org.nvm.cars.dto.ClienteDto;
 import org.nvm.cars.service.ClienteService;
 
@@ -117,6 +118,15 @@ public abstract class ClienteControllerBase {
     }
 
     @GET
+    @Path("/by-automobili/{automobiliId}")
+    public Response findByAutomobiliId(@PathParam("automobiliId") Long automobiliId) {
+        if (automobiliId == null) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+        return Response.ok(this.toDtoList(this.clienteService.findByAutomobiliId(automobiliId))).build();
+    }
+
+    @GET
     @Path("/by-prenotazioni/{prenotazioniId}")
     public Response findByPrenotazioniId(@PathParam("prenotazioniId") Long prenotazioniId) {
         if (prenotazioniId == null) {
@@ -135,8 +145,14 @@ public abstract class ClienteControllerBase {
         dto.setCognome(entity.getCognome());
         dto.setDataDiNascita(entity.getDataDiNascita());
         dto.setNumero(entity.getNumero());
-        if (entity.getPossiede() != null) {
-            dto.setPossiedeId(entity.getPossiede().getId());
+        if (entity.getAutomobili() != null) {
+            List<Long> automobiliIds = new java.util.ArrayList<>();
+            for (Automobile relationEntity : entity.getAutomobili()) {
+                if (relationEntity != null && relationEntity.getId() != null) {
+                    automobiliIds.add(relationEntity.getId());
+                }
+            }
+            dto.setAutomobiliIds(automobiliIds);
         }
         if (entity.getPrenotazioni() != null) {
             List<Long> prenotazioniIds = new java.util.ArrayList<>();
@@ -146,6 +162,9 @@ public abstract class ClienteControllerBase {
                 }
             }
             dto.setPrenotazioniIds(prenotazioniIds);
+        }
+        if (entity.getPossiede() != null) {
+            dto.setPossiedeId(entity.getPossiede().getId());
         }
         return dto;
     }
@@ -171,10 +190,16 @@ public abstract class ClienteControllerBase {
         entity.setCognome(dto.getCognome());
         entity.setDataDiNascita(dto.getDataDiNascita());
         entity.setNumero(dto.getNumero());
-        if (dto.getPossiedeId() != null) {
-            Credenziali relationEntity = new Credenziali();
-            relationEntity.setId(dto.getPossiedeId());
-            entity.setPossiede(relationEntity);
+        if (dto.getAutomobiliIds() != null) {
+            List<Automobile> automobiliEntities = new java.util.ArrayList<>();
+            for (Long relationId : dto.getAutomobiliIds()) {
+                if (relationId != null) {
+                    Automobile relationEntity = new Automobile();
+                    relationEntity.setId(relationId);
+                    automobiliEntities.add(relationEntity);
+                }
+            }
+            entity.setAutomobili(automobiliEntities);
         }
         if (dto.getPrenotazioniIds() != null) {
             List<Prenotazione> prenotazioniEntities = new java.util.ArrayList<>();
@@ -186,6 +211,11 @@ public abstract class ClienteControllerBase {
                 }
             }
             entity.setPrenotazioni(prenotazioniEntities);
+        }
+        if (dto.getPossiedeId() != null) {
+            Credenziali relationEntity = new Credenziali();
+            relationEntity.setId(dto.getPossiedeId());
+            entity.setPossiede(relationEntity);
         }
         return entity;
     }

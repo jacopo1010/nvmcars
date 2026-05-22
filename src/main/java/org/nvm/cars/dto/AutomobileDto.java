@@ -18,7 +18,7 @@ public class AutomobileDto {
 
     private Timestamp anno;
 
-    private Long possiedeId;
+    private Long automobiliId;
 
     private Long prenotazioneAffiliataId;
 
@@ -65,12 +65,12 @@ public class AutomobileDto {
         this.anno = anno;
     }
 
-    public Long getPossiedeId() {
-        return this.possiedeId;
+    public Long getAutomobiliId() {
+        return this.automobiliId;
     }
 
-    public void setPossiedeId(Long possiedeId) {
-        this.possiedeId = possiedeId;
+    public void setAutomobiliId(Long automobiliId) {
+        this.automobiliId = automobiliId;
     }
 
     public Long getPrenotazioneAffiliataId() {

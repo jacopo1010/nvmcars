@@ -44,8 +44,8 @@ public class AutomobileServiceBase {
         return this.repository.findByKeyword(keyword);
     }
 
-    public List<Automobile> findByPossiedeId(Long id) {
-        return this.repository.findByPossiedeId(id);
+    public List<Automobile> findByAutomobiliId(Long id) {
+        return this.repository.findByAutomobiliId(id);
     }
 
 
@@ -104,17 +104,17 @@ public class AutomobileServiceBase {
             throw new IllegalArgumentException("Automobile obbligatorio");
         }
 
-        Cliente possiede = entity.getPossiede();
-        if (possiede == null || possiede.getId() == null) {
+        Cliente automobili = entity.getAutomobili();
+        if (automobili == null || automobili.getId() == null) {
             throw new IllegalArgumentException("Cliente associato obbligatorio per Automobile");
         }
-        if (possiede != null) {
-            if (possiede.getId() == null) {
+        if (automobili != null) {
+            if (automobili.getId() == null) {
                 throw new IllegalArgumentException("Id di Cliente associato obbligatorio");
             }
-            if (!this.clienteRepository.existingById(possiede.getId())) {
+            if (!this.clienteRepository.existingById(automobili.getId())) {
                 throw new IllegalArgumentException("Cliente associato non esistente: "
-                    + possiede.getId());
+                    + automobili.getId());
             }
         }
     }

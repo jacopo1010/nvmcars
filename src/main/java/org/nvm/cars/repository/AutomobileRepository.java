@@ -33,9 +33,9 @@ public class AutomobileRepository extends SimpleRepositoryImpl<Automobile> {
         return query.getResultList();
     }
 
-    public List<Automobile> findByPossiedeId(Long id) {
+    public List<Automobile> findByAutomobiliId(Long id) {
         TypedQuery<Automobile> query = this.getEntityManager().createQuery(
-                "SELECT a FROM Automobile a WHERE a.possiede.id = :id",
+                "SELECT a FROM Automobile a WHERE a.automobili.id = :id",
                 Automobile.class);
         query.setParameter("id", id);
         return query.getResultList();

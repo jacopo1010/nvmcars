@@ -57,13 +57,13 @@ public class Automobile {
     @Column(name = "anno", nullable = false)
     private Timestamp anno;
     /**
-     * Elemento generato automaticamente: possiede
+     * Elemento generato automaticamente: automobili
      */
     @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = { CascadeType.REMOVE })
     @Fetch(FetchMode.SELECT)
     @JoinColumn(name = "cliente_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
-    private Cliente possiede;
+    private Cliente automobili;
     /**
      * Elemento generato automaticamente: prenotazioneAffiliata
      */
@@ -163,21 +163,21 @@ public class Automobile {
         this.anno = anno;
     }
     /**
-     * Restituisce possiede.
+     * Restituisce automobili.
      *
-     * @return elemento generato automaticamente: possiede
+     * @return elemento generato automaticamente: automobili
      */
-    public Cliente getPossiede() {
-        return this.possiede;
+    public Cliente getAutomobili() {
+        return this.automobili;
     }
 
     /**
-     * Imposta possiede.
+     * Imposta automobili.
      *
-     * @param possiede elemento generato automaticamente: possiede
+     * @param automobili elemento generato automaticamente: automobili
      */
-    public void setPossiede(Cliente possiede) {
-        this.possiede = possiede;
+    public void setAutomobili(Cliente automobili) {
+        this.automobili = automobili;
     }
     /**
      * Restituisce prenotazioneAffiliata.
