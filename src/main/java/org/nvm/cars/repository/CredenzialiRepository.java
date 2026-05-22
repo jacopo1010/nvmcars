@@ -36,12 +36,11 @@ public class CredenzialiRepository extends SimpleRepositoryImpl<Credenziali> {
         if (username == null || username.trim().isEmpty()) {
             return null;
         }
-       TypedQuery<Credenziali> query = this.getEntityManager().createQuery("SELECT c FROM Credenziali c WHERE username = :username", Credenziali.class);
+        TypedQuery<Credenziali> query = this.getEntityManager().createQuery(
+                "SELECT c FROM Credenziali c WHERE username = :username",
+                Credenziali.class);
         query.setParameter("username", username);
-        return query.getSingleResult();
+        List<Credenziali> result = query.setMaxResults(1).getResultList();
+        return result.isEmpty() ? null : result.get(0);
     }
-
-
-
-
 }

@@ -2,6 +2,7 @@ package org.nvm.cars.service;
 
 
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.transaction.Transactional;
 import org.mindrot.jbcrypt.BCrypt;
 import org.nvm.cars.model.Credenziali;
 
@@ -13,12 +14,6 @@ public class CredenzialiService extends CredenzialiServiceBase {
         return this.repository.findByUsername(username);
     }
 
-    public boolean SavePassword(String email, String password)
-    {
-      //da implementare
-      return true;
-    }
-
     public boolean checkPassword(String username,String password)
     {
         Credenziali credenziali = this.repository.findByUsername(username);
@@ -28,4 +23,11 @@ public class CredenzialiService extends CredenzialiServiceBase {
         return  BCrypt.checkpw(password,credenziali.getPassword());
     }
 
+    @Override
+    @Transactional
+    public Credenziali save(Credenziali entity) {
+        String psw = entity.getPassword();
+        entity.setPassword(BCrypt.hashpw(psw, BCrypt.gensalt()));
+        return super.save(entity);
+    }
 }

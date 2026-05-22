@@ -124,9 +124,6 @@ public abstract class CredenzialiControllerBase {
         dto.setUsername(entity.getUsername());
         dto.setPassword(entity.getPassword());
         dto.setEmail(entity.getEmail());
-        if (entity.getPossiede() != null) {
-            dto.setPossiedeId(entity.getPossiede().getId());
-        }
         return dto;
     }
 
@@ -153,7 +150,6 @@ public abstract class CredenzialiControllerBase {
         if (dto.getPossiedeId() != null) {
             Titolare relationEntity = new Titolare();
             relationEntity.setId(dto.getPossiedeId());
-            entity.setPossiede(relationEntity);
         }
         return entity;
     }

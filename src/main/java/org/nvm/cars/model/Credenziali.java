@@ -44,9 +44,6 @@ public class Credenziali {
     /**
      * Elemento generato automaticamente: possiede
      */
-    @OneToOne(mappedBy = "possiede"  ,fetch = FetchType.LAZY, optional = false)
-    @Fetch(FetchMode.SELECT)
-    private Titolare possiede;
 
     // --- COSTRUTTORE ---
     public Credenziali() {
@@ -129,21 +126,5 @@ public class Credenziali {
     public void setEmail(String email) {
         this.email = email;
     }
-    /**
-     * Restituisce possiede.
-     *
-     * @return elemento generato automaticamente: possiede
-     */
-    public Titolare getPossiede() {
-        return this.possiede;
-    }
 
-    /**
-     * Imposta possiede.
-     *
-     * @param possiede elemento generato automaticamente: possiede
-     */
-    public void setPossiede(Titolare possiede) {
-        this.possiede = possiede;
-    }
 }
