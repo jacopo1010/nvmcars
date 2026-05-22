@@ -59,18 +59,24 @@ public class Cliente {
     @Column(name = "numero", nullable = false)
     private String numero;
     /**
-     * Elemento generato automaticamente: possiede
+     * Elemento generato automaticamente: automobili
      */
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @OneToMany(mappedBy = "automobili", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE })
     @Fetch(FetchMode.SELECT)
-    @JoinColumn(name = "credenziali_id", nullable = false)
-    private Credenziali possiede;
+    private List<Automobile> automobili = new ArrayList<>();
     /**
      * Elemento generato automaticamente: prenotazioni
      */
     @OneToMany(mappedBy = "prenotazioni", fetch = FetchType.LAZY, cascade = { CascadeType.REMOVE })
     @Fetch(FetchMode.SELECT)
     private List<Prenotazione> prenotazioni = new ArrayList<>();
+    /**
+     * Elemento generato automaticamente: possiede
+     */
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @Fetch(FetchMode.SELECT)
+    @JoinColumn(name = "credenziali_id", nullable = false)
+    private Credenziali possiede;
 
     // --- COSTRUTTORE ---
     public Cliente() {
@@ -163,21 +169,21 @@ public class Cliente {
         this.numero = numero;
     }
     /**
-     * Restituisce possiede.
+     * Restituisce automobili.
      *
-     * @return elemento generato automaticamente: possiede
+     * @return elemento generato automaticamente: automobili
      */
-    public Credenziali getPossiede() {
-        return this.possiede;
+    public List<Automobile> getAutomobili() {
+        return this.automobili;
     }
 
     /**
-     * Imposta possiede.
+     * Imposta automobili.
      *
-     * @param possiede elemento generato automaticamente: possiede
+     * @param automobili elemento generato automaticamente: automobili
      */
-    public void setPossiede(Credenziali possiede) {
-        this.possiede = possiede;
+    public void setAutomobili(List<Automobile> automobili) {
+        this.automobili = automobili;
     }
     /**
      * Restituisce prenotazioni.
@@ -195,5 +201,22 @@ public class Cliente {
      */
     public void setPrenotazioni(List<Prenotazione> prenotazioni) {
         this.prenotazioni = prenotazioni;
+    }
+    /**
+     * Restituisce possiede.
+     *
+     * @return elemento generato automaticamente: possiede
+     */
+    public Credenziali getPossiede() {
+        return this.possiede;
+    }
+
+    /**
+     * Imposta possiede.
+     *
+     * @param possiede elemento generato automaticamente: possiede
+     */
+    public void setPossiede(Credenziali possiede) {
+        this.possiede = possiede;
     }
 }

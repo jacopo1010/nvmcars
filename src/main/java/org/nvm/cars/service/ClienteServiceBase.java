@@ -40,6 +40,10 @@ public class ClienteServiceBase {
         return this.repository.findByKeyword(keyword);
     }
 
+    public List<Cliente> findByAutomobiliId(Long id) {
+        return this.repository.findByAutomobiliId(id);
+    }
+
     public List<Cliente> findByPrenotazioniId(Long id) {
         return this.repository.findByPrenotazioniId(id);
     }

@@ -117,12 +117,12 @@ public abstract class AutomobileControllerBase {
     }
 
     @GET
-    @Path("/by-possiede/{possiedeId}")
-    public Response findByPossiedeId(@PathParam("possiedeId") Long possiedeId) {
-        if (possiedeId == null) {
+    @Path("/by-automobili/{automobiliId}")
+    public Response findByAutomobiliId(@PathParam("automobiliId") Long automobiliId) {
+        if (automobiliId == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         }
-        return Response.ok(this.toDtoList(this.automobileService.findByPossiedeId(possiedeId))).build();
+        return Response.ok(this.toDtoList(this.automobileService.findByAutomobiliId(automobiliId))).build();
     }
 
     protected AutomobileDto toDto(Automobile entity) {
@@ -135,8 +135,8 @@ public abstract class AutomobileControllerBase {
         dto.setMarca(entity.getMarca());
         dto.setModello(entity.getModello());
         dto.setAnno(entity.getAnno());
-        if (entity.getPossiede() != null) {
-            dto.setPossiedeId(entity.getPossiede().getId());
+        if (entity.getAutomobili() != null) {
+            dto.setAutomobiliId(entity.getAutomobili().getId());
         }
         if (entity.getPrenotazioneAffiliata() != null) {
             dto.setPrenotazioneAffiliataId(entity.getPrenotazioneAffiliata().getId());
@@ -165,10 +165,10 @@ public abstract class AutomobileControllerBase {
         entity.setMarca(dto.getMarca());
         entity.setModello(dto.getModello());
         entity.setAnno(dto.getAnno());
-        if (dto.getPossiedeId() != null) {
+        if (dto.getAutomobiliId() != null) {
             Cliente relationEntity = new Cliente();
-            relationEntity.setId(dto.getPossiedeId());
-            entity.setPossiede(relationEntity);
+            relationEntity.setId(dto.getAutomobiliId());
+            entity.setAutomobili(relationEntity);
         }
         if (dto.getPrenotazioneAffiliataId() != null) {
             RigaPrenotazione relationEntity = new RigaPrenotazione();

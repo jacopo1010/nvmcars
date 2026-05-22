@@ -38,11 +38,15 @@ public class AuthenticationController {
                    .build();
        }else{
           if(authDto.getRuolo().equals(Credenziali.TITOLARE)){
-
+              boolean verificato = this.credenzialiService.checkPassword(authDto.getUsername(), authDto.getPassword());
+              if(verificato) {
+                  return Response.ok().build();
+              }else {
+                  return Response.status(Response.Status.UNAUTHORIZED).build();
+              }
           }else{
-
+              return Response.status(Response.Status.UNAUTHORIZED).build();
           }
        }
-       return Response.ok().build();
     }
 }

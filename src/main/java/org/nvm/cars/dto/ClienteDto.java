@@ -20,9 +20,11 @@ public class ClienteDto {
 
     private String numero;
 
-    private Long possiedeId;
+    private List<Long> automobiliIds = new ArrayList<>();
 
     private List<Long> prenotazioniIds = new ArrayList<>();
+
+    private Long possiedeId;
 
     public ClienteDto() {
     }
@@ -67,12 +69,12 @@ public class ClienteDto {
         this.numero = numero;
     }
 
-    public Long getPossiedeId() {
-        return this.possiedeId;
+    public List<Long> getAutomobiliIds() {
+        return this.automobiliIds;
     }
 
-    public void setPossiedeId(Long possiedeId) {
-        this.possiedeId = possiedeId;
+    public void setAutomobiliIds(List<Long> automobiliIds) {
+        this.automobiliIds = automobiliIds;
     }
 
     public List<Long> getPrenotazioniIds() {
@@ -81,5 +83,13 @@ public class ClienteDto {
 
     public void setPrenotazioniIds(List<Long> prenotazioniIds) {
         this.prenotazioniIds = prenotazioniIds;
+    }
+
+    public Long getPossiedeId() {
+        return this.possiedeId;
+    }
+
+    public void setPossiedeId(Long possiedeId) {
+        this.possiedeId = possiedeId;
     }
 }

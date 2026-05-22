@@ -1,13 +1,12 @@
 
 package org.nvm.cars.repository;
 
-import java.util.Collections;
-import java.util.List;
-
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.persistence.TypedQuery;
-
 import org.nvm.cars.model.Credenziali;
+
+import java.util.Collections;
+import java.util.List;
 
 @ApplicationScoped
 public class CredenzialiRepository extends SimpleRepositoryImpl<Credenziali> {
@@ -32,5 +31,17 @@ public class CredenzialiRepository extends SimpleRepositoryImpl<Credenziali> {
         query.setParameter("keyword", pattern);
         return query.getResultList();
     }
+
+    public Credenziali findByUsername(String username) {
+        if (username == null || username.trim().isEmpty()) {
+            return null;
+        }
+       TypedQuery<Credenziali> query = this.getEntityManager().createQuery("SELECT c FROM Credenziali c WHERE username = :username", Credenziali.class);
+        query.setParameter("username", username);
+        return query.getSingleResult();
+    }
+
+
+
 
 }

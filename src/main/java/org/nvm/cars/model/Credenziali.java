@@ -1,20 +1,6 @@
 package org.nvm.cars.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
@@ -24,6 +10,9 @@ import org.hibernate.annotations.FetchMode;
 @Entity
 @Table(name = "credenziali")
 public class Credenziali {
+
+    public static final String UTENTE = "UTENTE";
+    public static final String TITOLARE = "TITOLARE";
 
     // --- ATTRIBUTI SEMPLICI ---
     /**
@@ -41,13 +30,17 @@ public class Credenziali {
     /**
      * Elemento generato automaticamente: password
      */
-    @Column(name = "password", nullable = false, length = 12, unique = true)
+    @Column(name = "password", nullable = false, unique = false)
     private String password;
     /**
      * Elemento generato automaticamente: email
      */
     @Column(name = "email", nullable = false, unique = true)
     private String email;
+    /**
+     * Elemento generato automaticamente: ruolo
+     */
+    private String ruolo;
     /**
      * Elemento generato automaticamente: possiede
      */
@@ -68,6 +61,14 @@ public class Credenziali {
      */
     public Long getId() {
         return this.id;
+    }
+
+    public String getRuolo() {
+        return ruolo;
+    }
+
+    public void setRuolo(String ruolo) {
+        this.ruolo = ruolo;
     }
 
     /**
